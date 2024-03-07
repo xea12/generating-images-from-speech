@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -37,7 +40,7 @@
         button:hover {
             background-color: #0056b3;
         }
-        #transcription {
+        #transcription, .prompt {
             margin: 20px auto;
             width: 80%;
             min-height: 150px;
@@ -74,7 +77,12 @@
 </div>
 
 <div id="transcription"></div>
+
+
 <form id="form" action="generuj_obrazek.php" method="POST" enctype="multipart/form-data">
+    <div style="display: flex; margin: 0 auto;">
+        <textarea class="prompt" name="prompt"></textarea>
+    </div>
     <input type="hidden" name="transcript" id="transcriptField">
     <input type="submit" value="Wyślij tekst do generowania obrazka">
 </form>
